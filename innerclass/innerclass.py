@@ -5,16 +5,49 @@
 # ExampleGet your own Python Server
 # Create an inner class:
 
-class Outer:
-  def __init__(self):
-    self.name = "Outer Class"
+# class Outer:
+#   def __init__(self):
+#     self.name = "Outer Class"
 
-  class Inner:
+#   class Inner:
+#     def __init__(self):
+#       self.name = "Inner Class"
+
+#     def display(self):
+#       print("This is the inner class")
+
+# outer = Outer()
+# print(outer.name)
+
+
+class outer:
     def __init__(self):
-      self.name = "Inner Class"
+        self.name = "outer class"
 
-    def display(self):
-      print("This is the inner class")
+    class inner:
+        def __init__(self, outer_instance):
+            self.outer = outer_instance
 
-outer = Outer()
-print(outer.name)
+        def display(self):
+            print(f"outer name is {self.outer.name}")
+
+out = outer()
+Inner = outer.inner(out)
+
+Inner.display()
+
+
+# class Outer:
+#   def __init__(self):
+#     self.name = "Emil"
+
+#   class Inner:
+#     def __init__(self, outer):
+#       self.outer = outer
+
+#     def display(self):
+#       print(f"Outer class name: {self.outer.name}")
+
+# outer = Outer()
+# inner = outer.Inner(outer)
+# inner.display()
